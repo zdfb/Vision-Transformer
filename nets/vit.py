@@ -1,6 +1,5 @@
 import torch
 import torch.nn as nn
-from einops import rearrange
 from utils.utils import to_2tuple, _conv_filter
 
 
@@ -147,4 +146,3 @@ def vit_base_patch16_384(model_path):
     checkpoint = _conv_filter(checkpoint)
     model.load_state_dict(checkpoint, strict = True)
     return model
-     
