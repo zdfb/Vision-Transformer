@@ -56,7 +56,7 @@ def fit_one_epoch(model, vit_loss, optimizer, train_data, test_data, device):
 
             loss_value = vit_loss(outputs, targets)
 
-            test_loss_list.append(loss_value.item)
+            test_loss_list.append(loss_value.item())
             prediction = torch.max(outputs, dim = 1)[-1]
             test_accuracy = prediction.eq(targets).cpu().float().mean()
             test_accuracy_list.append(test_accuracy)
